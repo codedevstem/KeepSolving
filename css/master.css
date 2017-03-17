@@ -1,21 +1,21 @@
 html, body {
  min-width: 100%;
- min-height: 100%;
+ height: 100%;
  margin: 0;
-
 }
 header {
  display: flex;
  width: 100%;
+ min-height: 10%;
  background-color: whitesmoke;
  border-bottom: 2px solid black;
 }
 header>h1 {
  margin-left: 1em;
- flex: 2;
+ flex: 3;
 }
 nav {
- flex: 1;
+ flex: 2;
  display: flex;
  justify-content: flex-end;
 }
@@ -28,24 +28,42 @@ nav>a{
  margin-right: 1em;
  margin-top: auto;
  margin-bottom: auto;
- padding: 1em;
+ padding: 1.5em;
  text-align: center;
  border-radius: 30%;
 }
 nav>a:hover{
  background-color: #AAA;
 }
+body>header:last-of-type{
+    padding: 0.5em;
+}
+.giveBombInfo {
+    display: flex;
+    flex-direction: column;
+}
+.giveBombInfo>input {
+    display: none;
+}
+
+.isTrue {
+    background-color: greenyellow;
+}
+.isFalse {
+    background-color: red;
+}
 
 main{ 
  padding: 0em 1em;
  display: flex;
-
+ height: 80%;
 }
 
 #moduleList {
  display: flex;
  flex-direction: column;
  height: 100%;
+ min-height: 100%;
  justify-content: center;
  flex: 1;
 }
@@ -58,7 +76,7 @@ main{
  border-radius: 30%;
  display: flex;
  justify-content: center;
- cursor: hand;
+ cursor: auto hand;
 }
 .module:hover {
  background-color: red;
@@ -78,12 +96,11 @@ main{
  font-size: 150%;
  border: none;
  background: #AAA;
- border-radius: 50%;
  width: 8em;
  height: 2em;
  text-align: center;
  padding: 0.3em;
- cursor: hand;
+ cursor:pointer hand;
 }
 #solvingSection>input:hover {
  background-color: red;
