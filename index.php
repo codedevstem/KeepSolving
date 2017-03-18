@@ -15,10 +15,12 @@
    <nav>
     <a href="">HowTo</a>
     <a href="">Download manual</a>
+    <a href="">RESET BOMB!</a>
    </nav>
   </header>
   <header>
-    <div class="giveBombInfo">
+    <h3>Fill in relevant data</h3>
+    <div id="batteriesChoise">
     <label for="batteriesSelector">How many batteries</label>
     <select id="batteriesSelector">
         <option value="0">0</option>
@@ -29,9 +31,15 @@
         <option value="5">5</option>
     </select>
     </div>
-    <div class="giveBombInfo">
-        <label for="carIndicator" id="carLabel">CAR Label</label>
-        <input type="checkbox" id="carIndicator">
+    <div id="booleanProperties">
+        <label for="car" id="carLabel">CAR</label>
+        <input type="checkbox" id="car">
+        <label for="frk" id="frkLabel">FRK</label>
+        <input type="checkbox" id="frk">
+        <label for="lastDigit" id="lastDigitLabel">Last Digit Even</label>
+        <input type="checkbox" id="lastDigit">
+        <label for="paralellPort" id="paralellPortLabel">Paralell Port</label>
+        <input type="checkbox" id="paralellPort">
     </div>
   </header>
   <main>
@@ -39,9 +47,7 @@
     <?php
      $items = ["Memory","SimpleWires","Button"];
      foreach($items as $item){
-      echo "<section class='module' id='$item'>";
-       echo "<p>$item</p>";
-      echo "</section>";
+       echo "<input class='module' id='$item' type='button' readOnly='true' value=$item>";
      };
     ?>
    </section>

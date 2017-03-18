@@ -6,24 +6,26 @@ let memoryStage = 0;
 function fillInMemory(solveSection) {
  let resetButton = document.createElement("input");
  resetButton.value = "Reset Module";
- resetButton.addEventListener("click", function () {resetModule()}, false)
+ resetButton.readOnly = true;
+ resetButton.addEventListener("click", function () {resetMemoryModule()}, false)
  solveSection.appendChild(resetButton);
  
  generateInputFields(solveSection, "Display");
  generateInputFields(solveSection, "Position");
  generateInputFields(solveSection, "Label");
  let explanation = document.createElement("p");
- explanation.id = "memoryExplanation";
+ explanation.id = "explanation";
  solveSection.appendChild(explanation);
+ resetMemoryModule();
 }
-function resetModule(){
-    memoryDisplay = [];
-    memoryPosition = [];
-    memoryLabel = [];
-    memoryStage = 0;
-    resetInputs();
-    let message = document.querySelector("#memoryExplanation");
- message.innerHTML = "";
+function resetMemoryModule(){
+  memoryDisplay = [];
+  memoryPosition = [];
+  memoryLabel = [];
+  memoryStage = 0;
+  resetInputs();
+  let message = document.querySelector("#explanation");
+  message.innerHTML = "";
 }
 function generateInputFields(parent, type) {
  let choices = [1,2,3,4];
@@ -34,6 +36,7 @@ function generateInputFields(parent, type) {
  inputSection.appendChild(inputLabel);
  choices.forEach(choice => {
   let numberChoice = document.createElement("input");
+  numberChoice.readOnly = true;
   numberChoice.addEventListener("click", function() {setValue(type, choice)}, false);
   numberChoice.classList.add(type + choice);
   numberChoice.value = choice;
@@ -84,7 +87,7 @@ function resetInputs(){
  });
 }
 function showExplanation() {
- let message = document.querySelector("#memoryExplanation");
+ let message = document.querySelector("#explanation");
  message.innerHTML = "Stage " + parseInt(memoryStage+1) + ": " + solveStep();
 }
 
