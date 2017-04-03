@@ -64,6 +64,7 @@ header>h3 {
 }
 #booleanProperties>input {
     display: none;
+    cursor: hand pointer;
 }
 #booleanProperties>label {
     display: flex;
@@ -97,7 +98,7 @@ main{
  border-radius: 30%;
  display: flex;
  justify-content: center;
- cursor: auto hand;
+ cursor: hand pointer;
  border: none;
 }
 .module:hover {
@@ -107,6 +108,7 @@ main{
  margin: 5em;
  flex: 7;
  background-color: #CCC;
+ padding: 1em;
 }
 #solvingSection>section{
  margin: 3px;
@@ -120,7 +122,7 @@ main{
  height: 2em;
  text-align: center;
  padding: 0.3em;
- cursor:pointer hand;
+ cursor: hand pointer;
 }
 #solvingSection>input:hover {
  background-color: red;
@@ -138,7 +140,7 @@ main{
  border: none;
  font-size: 1.2vw;
  text-align: center;
- cursor: hand;
+ cursor: hand pointer;
 }
 #solvingSection>section>input:hover{
  background-color: #AAA;
